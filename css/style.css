@@ -1,0 +1,32 @@
+span{
+    color: aqua;
+    font-size: large;
+}
+.subhead{
+    font-family: sans-serif;
+}
+#para{
+    background-color: chocolate;
+    color: black;
+}
+h1,.subhead,span{
+    background-color: orange;
+}
+*{
+    background-color: lightslategray;
+}
+div p{
+    color: brown;
+}
+div>p{
+    color: green;
+}
+input[type="text"]{
+    color: pink;
+}
+h1 + p{
+    color: darkblue;
+}
+h1 ~p{
+    color: black;
+}
