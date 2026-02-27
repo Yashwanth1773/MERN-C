@@ -41,10 +41,49 @@
             text-decoration: none;
             color:aqua;
         }*/
+        body{
+            height: 1000vh;
+        }
+        .Sticky{
+            position: sticky;
+            top: 1px;;
+        }
+        .fixed{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: red;
+            padding: 10px;
+        }
+        .parent{
+            position: relative;
+            border: 2px solid black;
+            background-color: bisque;
+            width: 300px;
+            height: 60vh;
+            top: 10px;
+            left: 40px;
+        }
+        .child{
+            position: absolute;
+            border: 2px dotted blue;
+            top: 50px;
+            left: 100px;
+            height: 100px;
+            width: 100px;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="Sticky">Sticky</div>
+    <div class="fixed">Fixed</div>
+    <div class="parent">
+        Relative
+        <div class="child"> 
+            Absolute
+        </div>
+    </div>
     
 </body>
 </html>
