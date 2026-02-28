@@ -216,12 +216,12 @@ console.log("Hello world")
 //scope 
 
 //global
-// var a=20;
-// if(true){
-//     var b=10;//block scope
-// }
-// console.log(a);
-// console.log(b);
+var a=20;
+if(true){
+    var b=10;//block scope
+}
+console.log(a);
+console.log(b);
 
 //let
 // let a=10;
