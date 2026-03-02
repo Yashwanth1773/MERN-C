@@ -1,0 +1,80 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color:lightblue  ;
+    color: #333;
+}
+/* fixed */
+.sticky{
+    position:sticky;
+    top: 5px;
+    left: 50px;
+    text-align: left;
+    padding:10px;
+   
+}   
+.circle{
+     border-radius: 50%;
+}
+
+/* Header */
+header {
+    background-color:lightgreen;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Skills List */
+#skills ul {
+    list-style: none;
+}
+
+#skills li {
+    background-color: #ddd;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Project Cards */
+.project-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+#contact p {
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
