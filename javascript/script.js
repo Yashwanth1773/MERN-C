@@ -1,4 +1,4 @@
-console.log("Hello world")
+// console.log("Hello world")
 // //reinitialize and redeclare
 // var a;
 // a=10;
@@ -216,12 +216,12 @@ console.log("Hello world")
 //scope 
 
 //global
-var a=20;
-if(true){
-    var b=10;//block scope
-}
-console.log(a);
-console.log(b);
+// var a=20;
+// if(true){
+//     var b=10;//block scope
+// }
+// console.log(a);
+// console.log(b);
 
 //let
 // let a=10;
@@ -238,3 +238,66 @@ console.log(b);
 // }
 // console.log(a);
 // console.log(b);
+
+//promise
+// const promise=new Promise((resolve,reject)=>{
+//     var s=true;
+//     if(s){
+//         resolve("Task completed");
+//     }
+//     else{
+//         reject("Task not completed");
+//     }
+// })
+// promise.then((message)=>{
+//     console.log(message);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+// const promise= new Promise((resolve, reject) => {
+//     var success=true;
+//     if(success){
+//         setTimeout(()=>{
+//             resolve("Task completed")
+//         },2000);
+//     }
+//     else{
+//         reject("Task not completed");
+//     }
+// })
+// promise.then((mes)=>console.log(mes))
+// .catch((err)=>console.log(err))
+
+//set intrept
+// var count=1;
+// const Intervalcount=setInterval(()=>{
+//     console.log(count)
+//     count++;
+//     if(count>5){
+//         clearInterval(Intervalcount)
+//     }
+// },2000);
+
+//fetch user data
+// const getdata=()=>{
+//     return fetch("https://jsonplaceholder.typicode.com/users")
+// }
+// getdata().then((res)=>res.json())
+// .then((data)=>console.log(data))
+// .catch((err)=>console.log(err))
+
+//async and await
+const getdata= async()=>{
+    try{
+        const res=await fetch("https://jsonplaceholder.typicode.com/users")
+        const data=await res.json()
+        console.log(data);
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+getdata()
+
+
