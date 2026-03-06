@@ -5,6 +5,7 @@
 table {
   margin: auto;
   border-collapse: collapse;
+  background-color: green;
 }
 
 th,
@@ -14,5 +15,8 @@ td {
 }
 
 th {
-  background-color: #eee;
+  background-color: blue;
+}
+h2{
+  color: brown;
 }

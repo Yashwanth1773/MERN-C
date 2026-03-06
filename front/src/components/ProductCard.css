@@ -10,7 +10,7 @@
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px black;
 }
 
 .card h3 {
@@ -24,7 +24,7 @@
 .card button {
   margin-top: 10px;
   padding: 6px 12px;
-  background-color: #007bff;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
