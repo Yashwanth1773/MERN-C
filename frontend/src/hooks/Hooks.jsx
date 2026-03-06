@@ -12,6 +12,8 @@ const Hooks = () => {
             <li><Link to="effectwithapi" className='nestedLink'>EffectWithApi</Link></li>
             <li><Link to="ref" className='nestedLink'>Ref</Link></li>
             <li><Link to="reducer" className='nestedLink'>Reducer</Link></li>
+            <li><Link to="memo" className='nestedLink'>Memo</Link></li>
+            <li><Link to="callback" className='nestedLink'>Callback</Link></li>
         </ul>   
         
         <Outlet/>
