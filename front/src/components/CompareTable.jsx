@@ -20,7 +20,7 @@ function CompareTable({ products }) {
           <tr>
             <td>Price</td>
             {products.map((p) => (
-              <td key={p.id}>${p.price}</td>
+              <td key={p.id}>Rs{p.price}</td>
             ))}
           </tr>
 
