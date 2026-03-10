@@ -1,35 +1,44 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 const Todo = () => {
     const [task,setTask]=useState('')
-    const[todos,setTodos]=useState([{
-        task:'Read',
-        status:false
-    }])
+    const[todos,setTodos]=useState([])
+    const API=`http://localhost:3000/api/todo/`
+    const fetchTodo=async()=>{
+     const res=   await axios.get(`${API}`)
+        setTodos(res.data)
+    }
+    useEffect(()=>{
+        fetchTodo()
+    },[])
     const [edit,setEdit]=useState(null)
-    const handleaddoredit=()=>{
+    const handleaddoredit=async ()=>{
        
-        if(edit ||edit===0){
-            setTodos(todos.map((todo,index)=>(
-                index===edit?{...todo,task:task}:todo
-            )))
+        if(edit){
+            await axios.put(`${API}update${edit}`,{task})
+           
             setEdit(null)
 
         }
         else{
-            setTodos([...todos,{
-                task:task,
-                status:false
-            }])
+            await axios.post(`${API}create/`,{task})
         }
         setTask('')
+        fetchTodo()
 
     }
-    const handledelete=(index)=>{
-        setTodos(todos.filter((_,i)=>index!=i))
+    const handledelete=async (id)=>{
+        await axios.delete(`${API}delete/${id}`)
+        fetchTodo()
     }
-    const handletogglestatus=(index)=>{
-        setTodos(todos.map((todo,i)=>index===i?{...todo,status:!todo.status}:todo))
+    const handletogglestatus=async(todo)=>{
+        await axios.put(`${API}update/${todo._id}`,{
+            completed:!todo.completed
+        })
+        fetchTodo()
+        
     }
 
 
@@ -44,14 +53,14 @@ const Todo = () => {
         <br /><br />
         <ul>
             {todos.map((todo,index)=>(
-                <li key={index}>
-                    <span style={{cursor:"pointer",textDecoration:todo.status?"line-through":"none"}}
-                    onClick={()=>handletogglestatus(index)}>{todo.task}</span>
+                <li key={todo._id}>
+                    <span style={{cursor:"pointer",textDecoration:todo.completed?"line-through":"none"}}
+                    onClick={()=>handletogglestatus(todo)}>{todo.task}</span>
                     <button onClick={()=>{
                         setTask(todo.task)
-                        setEdit(index)
+                        setEdit(todo._id)
                     }}>✏️</button>
-                    <button onClick={()=>handledelete(index)}>💀</button>
+                    <button onClick={()=>handledelete(todo._id)}>💀</button>
                 </li>
             ))}
         </ul>
