@@ -6,6 +6,7 @@ const exRouters=require('./routers/egRouter')
 const userRouters=require('./routers/userRouter')
 const todoRouters=require('./routers/todoRouter')
 const cors=require('cors')
+const authrouters = require('./routers/authrouter')
 dotenv.config()
 connectDB()
 app.use(cors())
@@ -13,7 +14,7 @@ app.use(express.json())
 app.use(exRouters)
 app.use('/api/user',userRouters)
 app.use('/api/todo',todoRouters)
-
+app.use('/api/auth',authrouters)
 
 
 const PORT=process.env.PORT

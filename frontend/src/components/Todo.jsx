@@ -10,6 +10,7 @@ const Todo = () => {
      const res=   await axios.get(`${API}`)
         setTodos(res.data)
     }
+    
     useEffect(()=>{
         fetchTodo()
     },[])
