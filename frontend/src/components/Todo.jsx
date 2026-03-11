@@ -5,7 +5,7 @@ import axios from 'axios'
 const Todo = () => {
     const [task,setTask]=useState('')
     const[todos,setTodos]=useState([])
-    const API=`http://localhost:3000/api/todo/`
+    const API=`https://mern-c-z1cj.onrender.com/api/todo/`
     const fetchTodo=async()=>{
      const res=   await axios.get(`${API}`)
         setTodos(res.data)
@@ -52,7 +52,7 @@ const Todo = () => {
         <button onClick={handleaddoredit}>{edit||edit==0?"update":"Add"}</button>
         <br /><br />
         <ul>
-            {todos.map((todo,index)=>(
+            {todos.map((todo)=>(
                 <li key={todo._id}>
                     <span style={{cursor:"pointer",textDecoration:todo.completed?"line-through":"none"}}
                     onClick={()=>handletogglestatus(todo)}>{todo.task}</span>
