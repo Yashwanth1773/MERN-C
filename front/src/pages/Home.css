@@ -1,25 +1,54 @@
+/* Full screen home page */
 .container {
-  text-align: center;
-  padding: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
+  min-height: 100vh;
+  width: 100vw;
+  padding: 40px;
+  box-sizing: border-box;
 
-.container h1 {
-  margin-bottom: 30px;
-  color: #333;
-}
-
-/* Product cards layout (ROW WISE) */
-.product-grid {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(to right, #6dd5fa, #ffffff);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Comparison table section */
+/* Title */
+.container h1 {
+  margin-bottom: 40px;
+  color: #0a4f7a;
+}
+
+/* Product cards */
+.product-grid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Comparison table area */
 .comparison-section {
   margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  background: white;
+}
+
+th {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 12px 25px;
 }

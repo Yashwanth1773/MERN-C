@@ -1,14 +1,20 @@
-import React from 'react'
-import Home from './pages/Home'
-import "./App.css"
+import React, { useState } from "react";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 
-const App = () => {
+function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div>
-      <h1>Product comparision App</h1>
-      <Home/>
+      {isLoggedIn ? (
+        <Home />
+      ) : (
+        <Login setIsLoggedIn={setIsLoggedIn} />
+      )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

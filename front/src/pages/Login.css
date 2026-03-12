@@ -1,0 +1,75 @@
+/* Make entire page full screen */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Full screen background */
+.login-container{
+  height:100vh;
+  width:100vw;
+
+  background-image:url("../assets/login.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Top title */
+.title{
+  color:white;
+  font-size:40px;
+  margin-bottom:30px;
+  text-shadow:2px 2px 8px black;
+}
+
+/* Login box */
+.login-box{
+  width:350px;
+  padding:40px;
+  background:rgba(0,0,0,0.45);
+  border-radius:8px;
+  box-shadow:0 0 20px rgba(0,0,0,0.6);
+  color:white;
+  text-align:center;
+}
+
+/* Inputs */
+.login-box input[type="text"],
+.login-box input[type="password"]{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:4px;
+}
+
+/* Options row */
+.options{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin:10px 0;
+}
+
+/* Login button */
+.login-box button{
+  width:100%;
+  padding:10px;
+  background:#ff4b2b;
+  border:none;
+  color:white;
+  font-weight:bold;
+  margin-top:10px;
+  cursor:pointer;
+  border-radius:4px;
+}
+
+.login-box button:hover{
+  background:#ff2a00;
+}
