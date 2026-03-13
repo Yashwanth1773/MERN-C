@@ -9,7 +9,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if(username === "admin" && password === "1234"){
+    if(username === "yash" && password === "010203"){
       setIsLoggedIn(true);
     }
     else{

@@ -1,78 +1,57 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import CompareTable from "../components/CompareTable";
+import products from "../data/products";
 import "./Home.css";
 
-
 const Home = () => {
-  const [products, setProducts] = useState([]); // Products from backend
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  const [selectedProducts, setSelectedProducts] = useState([]); // For comparison
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
-  const API_URL = "http://localhost:5000/api/products"; // Your backend
-
-  // Fetch products from backend
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await axios.get(API_URL);
-        setProducts(res.data);
-      } catch (err) {
-        setError("Failed to fetch products");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  // Compare logic
   const toggleCompare = (product) => {
-    const exists = selectedProducts.find((p) => p._id === product._id);
+
+    const exists = selectedProducts.find(p => p.id === product.id);
 
     if (exists) {
       setSelectedProducts(
-        selectedProducts.filter((p) => p._id !== product._id)
+        selectedProducts.filter(p => p.id !== product.id)
       );
-    } else {
+    } 
+    else {
+
       if (selectedProducts.length < 3) {
         setSelectedProducts([...selectedProducts, product]);
-      } else {
+      } 
+      else {
         alert("You can compare only 3 products");
       }
+
     }
   };
 
   return (
     <div className="container">
+
       <h1>Product Comparison App</h1>
 
-      {/* Loading / Error */}
-      {loading && <p>Loading products...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <div className="product-grid">
 
-      {/* Products Grid */}
-      {!loading && !error && (
-        <div className="product-grid">
-          {products.map((product) => (
-            <ProductCard
-              key={product._id} // backend uses _id
-              product={product}
-              toggleCompare={toggleCompare}
-            />
-          ))}
-        </div>
-      )}
+        {products.map(product => (
 
-      {/* Comparison Table */}
+          <ProductCard
+            key={product.id}
+            product={product}
+            toggleCompare={toggleCompare}
+          />
+
+        ))}
+
+      </div>
+
       {selectedProducts.length > 0 && (
         <CompareTable products={selectedProducts} />
       )}
+
     </div>
   );
 };

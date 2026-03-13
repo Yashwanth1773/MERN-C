@@ -1,24 +1,26 @@
 import React from "react";
 import "./ProductCard.css";
 
-const ProductCard = ({ product, toggleCompare }) => {
-  return (
-    <div className="card">
+const ProductCard = ({product,toggleCompare}) => {
 
-      <img src={product.image} alt={product.name} className="product-image" />
+return(
 
-      <h3>{product.name}</h3>
+<div className="card">
 
-      <p>Price: {product.price}</p>
-      <p>Brand: {product.brand}</p>
-      <p>Rating: {product.rating}</p>
+<h3>{product.name}</h3>
 
-      <button onClick={() => toggleCompare(product)}>
-        Compare
-      </button>
+<p>Price: ${product.price}</p>
 
-    </div>
-  );
+<p>Rating: {product.rating}</p>
+
+<button onClick={()=>toggleCompare(product)}>
+Compare
+</button>
+
+</div>
+
+);
+
 };
 
 export default ProductCard;
